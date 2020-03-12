@@ -1,0 +1,37 @@
+CREATE TABLE IF NOT EXISTS `A` (
+  `A1` varchar(200) NOT NULL,
+  `A2` varchar(200) NOT NULL,
+  `B1` varchar(200) ,
+  `B2` varchar(200) ,
+  `B3` varchar(200) ,
+  PRIMARY KEY (`A1`,`A2`)
+) DEFAULT CHARSET=utf8;
+INSERT INTO `A` (`A1`, `A2`, `B1`, `B2`, `B3`) VALUES
+  ('A11', 'A111', 'B11','B111','B0001'),
+  ('A11', 'A112', 'B11','B112','B0001'),
+  ('A12', 'A121', '','',''),
+  ('A12', 'A122', 'B11','B114','');
+  
+CREATE TABLE IF NOT EXISTS `B` (
+  `C1` varchar(200) NOT NULL,
+  `C2` varchar(200) NOT NULL,
+  `C3` varchar(200) NOT NULL,
+  `D1` varchar(200) ,
+  `D2` FLOAT ,
+  `D3` FLOAT ,
+  PRIMARY KEY (`C1`,`C2`,`C3`)
+) DEFAULT CHARSET=utf8;
+INSERT INTO `B` (`C1`, `C2`,`C3`, `D1`, `D2`, `D3`) VALUES
+  ( 'B11','B111','B0001','D', 1,5),
+  ( 'B11','B111','B0002','D', 2,5),
+  ( 'B11','B111','B0003','C', 6,5),
+  ( 'B11','B114','B0001','D', 3,5),
+  ( 'B11','B114','B0002','D', 4,5);
+
+SELECT * 
+FROM A
+;
+
+SELECT D1,D2,D3
+FROM B
+;
